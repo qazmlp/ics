@@ -33,6 +33,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Download Calendars
+        working-directory: ${{ github.workspace }} # Is this needed?
+        run: |
+          curl --fail-with-body ${{ secrets.FurryArtHolidaysSFW }} --output ./furry-art-holidays-SFW.ics
+          curl --fail-with-body ${{ secrets.FurryArtHolidaysNSFW }} --output ./furry-art-holidays-NSFW.ics
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
