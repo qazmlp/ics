@@ -36,8 +36,8 @@ jobs:
       - name: Download Calendars
         working-directory: ${{ github.workspace }} # Is this needed?
         run: |
-          curl --fail-with-body ${{ secrets.FurryArtHolidaysSFW }} --output ./furry-art-holidays-SFW.ics
-          curl --fail-with-body ${{ secrets.FurryArtHolidaysNSFW }} --output ./furry-art-holidays-NSFW.ics
+          curl --fail-with-body ${{ secrets.FURRY_ART_HOLIDAYS_S_F_W }} --output ./furry-art-holidays-SFW.ics
+          curl --fail-with-body ${{ secrets.FURRY_ART_HOLIDAYS_N_S_F_W }} --output ./furry-art-holidays-NSFW.ics
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
